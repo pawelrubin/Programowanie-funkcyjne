@@ -49,3 +49,15 @@ choose n k
 -- Zadanie 7
 perfect :: Integer -> [Integer]
 perfect n = [k | k <- [1..n], sum [d | d <- [1..k], d /= k, mod k d == 0] == k]
+
+-- silnia
+fact :: Integer -> Integer
+fact 0 = 1
+fact n = n * fact (n-1)
+
+fac :: Int -> Integer
+facs = scanl (*) 1 [1..]
+fac n = facs !! n
+
+fak :: Integer -> Integer
+fak n = foldr (*) 1 [1..n]
