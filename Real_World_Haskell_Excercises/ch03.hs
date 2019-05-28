@@ -36,3 +36,28 @@ concatLists separator xs
     | (length xs) < 2 = (head xs)
     | otherwise = (head xs) ++ [separator] ++ (concatLists separator (tail xs))
 
+-- 8
+data Tree a = Node a (Tree a) (Tree a)
+    | Empty
+    deriving (Show)
+
+
+-- 9
+data Direction =
+    RD
+    | LD
+    | SD
+    deriving (Show)
+
+-- 10
+data Point =  Point Double Double
+
+turn :: Point -> Point -> Point -> Direction
+turn a b c 
+    | a1 > a2   = RD
+    | a1 == a2  = SD
+    | a1 < a2   = LD
+    where 
+        a1 = ((a. - b.getY) / (a.getX - b.getX)) :: Double
+        a2 = ((b.getY - c.getY) / (b.getX - c.getX)) :: Double
+
